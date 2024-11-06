@@ -1,0 +1,17 @@
+## Y(x)=15*sin(10*x)*cos(3*x), x=[-3...3]
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+t = np.linspace(-3, 3, 510)
+y = 15 * np.sin(10 * t) * np.cos(3 * t)
+
+plt.plot (t,y, label = '15*sin(10*t)*cos(3*t)', color = 'red', linewidth = 4)
+plt.title('Графік функції Y(x) = 15*sin(10*t)*cos(3*t)', fontsize=20)
+plt.xlabel('t', fontsize = 12, color = 'purple')
+plt.ylabel('Y(t)', fontsize = 12, color = 'blue')
+
+plt.legend()
+plt.grid(True)
+
+plt.show()
