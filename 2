@@ -1,0 +1,25 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import sys
+
+x = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015]
+y = [1262645000, 1271850000, 1280400000, 1288400000, 1296075000, 1303720000, 1311020000, 1317885000, 1324655000, 1331260000, 1337705000, 1345035000, 1354190000, 1363240000, 1371860000, 1379860000]  # China
+z = [49176500, 48662400, 48202470, 47812949, 47451626, 47105171, 46787786, 46509355, 46258189, 46053331, 45870741, 45706086, 45593342, 45489648, 45272155, 45167350]  # Ukraine
+
+country = input("Введіть назву країн ('Ukraine' або 'China'): ").strip()
+
+if country == "Ukraine":
+    plt.bar(x, z, color="purple", label="Ukraine")
+elif country == "China":
+    plt.bar(x, y, color="blue", label="China")
+else:
+    print("Неправильно введені дані, наступного разу читайте уважніше!")
+    sys.exit()  
+
+plt.title(f'World Development Indicators - {country}', fontsize=15)
+plt.xlabel('Year', fontsize=12, color='red')
+plt.ylabel('Population', fontsize=12, color='red')
+plt.legend()
+plt.grid(True)
+
+plt.show()
